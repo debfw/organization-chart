@@ -8,7 +8,8 @@ import Tree, { Point } from "react-d3-tree";
 import { useEffect, useRef, useState } from "react";
 
 export default function RelationTree() {
-  const { data, isSuccess } = useGetMember('1');
+
+  const { data, isSuccess } = useGetMember();
   const ref = useRef<HTMLDivElement>(null);
   // const rect = ref?.current?.getBoundingClientRect();
   const translate = (): Point => {
@@ -19,11 +20,6 @@ export default function RelationTree() {
     }
     return { x, y };
   };
-  console.log(data);
-
-  //  const handleSelect= (e:)=>{
-
-  //  }
 
   const renderForeignObjectNode = ({
     nodeDatum,

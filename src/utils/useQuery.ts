@@ -13,14 +13,13 @@ export const transformData = (data: any) => {
   };
 };
 
-export function useGetMember(code: string) {
+export function useGetMember() {
   return useQuery({
-    queryKey: ["search", code],
+    queryKey: ["search"],
     queryFn: async () => {
       const res = await fetch("http://localhost:3000/api/policyholders");
       const result = await res.json();
       const data = transformData(result);
-      console.log(result)
       return data;
     },
   });

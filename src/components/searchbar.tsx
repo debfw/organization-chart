@@ -7,7 +7,6 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import Button from "@mui/material/Button";
-import { useGetMember } from "@/utils/useQuery";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -41,7 +40,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function SearchAppBar() {
+export const  SearchAppBar = ()=> {
   const [value, setValue] = React.useState<string | undefined>();
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
@@ -62,7 +61,11 @@ export default function SearchAppBar() {
             保戶帳號
           </Typography>
           <div>
-            <input placeholder='search'onChange={handleChange} className="text-black ml-3" />
+            <input
+              placeholder="search"
+              onChange={handleChange}
+              className="text-black ml-3"
+            />
           </div>
           <Button
             variant="contained"

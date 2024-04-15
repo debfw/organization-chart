@@ -1,9 +1,8 @@
 "use client";
 import Image from "next/image";
 import GroupsIcon from "@mui/icons-material/Groups";
-import SearchAppBar from "../components/searchbar";
 import RelationTree from "@/components/relationTree";
-
+import { SearchAppBar } from "@/components/searchbar";
 
 export default function Home() {
   return (
